@@ -1,0 +1,34 @@
+# Editor defaults (https://editorconfig.org). Generated projects with their own .editorconfig keep theirs.
+# Indents match the formatters CI runs: 2 spaces by default (prettier), 4 where the language uses 4.
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+indent_style = space
+indent_size = 2
+
+# google-java-format --aosp, csharpier, ruff, PSR-12 (php-cs-fixer)
+[*.{java,kt,kts,gradle,cs,py,php}]
+indent_size = 4
+
+# LLVM style (.clang-format)
+[*.{c,cc,cpp,h,hpp}]
+indent_size = 2
+
+[*.{bat,cmd}]
+end_of_line = crlf
+
+[Makefile]
+indent_style = tab
+
+# trailing double spaces are line breaks in Markdown
+[*.md]
+trim_trailing_whitespace = false
+
+# judge test fixtures (input/expected output) must stay byte-exact
+[*.{in,out}]
+insert_final_newline = unset
+trim_trailing_whitespace = false
